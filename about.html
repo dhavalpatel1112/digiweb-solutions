@@ -37,7 +37,7 @@
         document.addEventListener("DOMContentLoaded", () => {
           // Update URL without reloading the page
           if (window.location.pathname.endsWith("about.html")) {
-            const cleanURL = window.location.pathname.replace("about.html", "");
+            const cleanURL = window.location.pathname.replace("about.html", "about");
             history.pushState(null, "", cleanURL);
           }
         });
