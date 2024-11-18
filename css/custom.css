@@ -39,7 +39,10 @@
 	--primary-color		: #15161B;
 	--secondary-color	: #F7F8FD;
 	--text-color		: #9C9FA6;
-	--accent-color		: #5D56F1;
+	/* --accent-color		: #5D56F1; */
+	--accent-color		: #945fa3; 
+    /* i think */
+	/* --accent-color		: #FF7F50; */
 	--white-color		: #FFFFFF;
 	--divider-color		: #E1E4EB;
 	--error-color		: rgb(230, 87, 87);
@@ -302,7 +305,7 @@ body{
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	max-width: 66px;
+	max-width: 150px;
 	transform: translate(-50%, -50%);
 }
 
@@ -3445,7 +3448,7 @@ services hover effect
 
 .service-item .service-content h2,
 .service-item .service-content p {
-    transition: color 1s ease;
+    transition: color .5s ease;
 }
 
 .service-item:hover .service-content h2,
