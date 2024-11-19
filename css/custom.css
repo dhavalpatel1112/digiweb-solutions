@@ -40,9 +40,10 @@
 	--secondary-color	: #F7F8FD;
 	--text-color		: #9C9FA6;
 	/* --accent-color		: #5D56F1; */
+	/* --accent-color		: #945fa3;  */
 	--accent-color		: #945fa3; 
     /* i think */
-	/* --accent-color		: #FF7F50; */
+	--accent-color		: #004aad;
 	--white-color		: #FFFFFF;
 	--divider-color		: #E1E4EB;
 	--error-color		: rgb(230, 87, 87);
@@ -399,8 +400,8 @@ header.main-header .header-sticky.active{
 	margin: 0;
 }
 
-.navbar-brand img{
-	min-width: 140px;
+.navbar-brand img {
+    max-width: 220px;
 }
 
 .main-menu .nav-menu-wrapper{
@@ -1163,9 +1164,9 @@ header.main-header .header-sticky.active{
 	margin-bottom: 40px;
 }
 
-.footer-about img{
+/* .footer-about img{
 	margin-bottom: 30px;
-}
+} */
 
 .footer-about ul{
 	list-style: none;
@@ -1185,7 +1186,7 @@ header.main-header .header-sticky.active{
 	font-size: 22px;
 	font-weight: 700;
 	color: var(--primary-color);
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	margin-bottom: 20px;
 }
 
@@ -3521,4 +3522,15 @@ why choose us hover css
 
 .why-choose-us-item:hover .icon-box img {
     transform: rotateY(180deg); /* Horizontal rotation */
+}
+.text-comming{
+    background-color: #004aad;
+    color: white;
+    font-size: 3rem;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.footer-about img {
+    width: 114px;
 }
