@@ -272,7 +272,7 @@ body{
 	right: 0;
 	bottom: 0;
 	z-index: 1000;
-	background-color: var(--accent-color);
+	background-color: white;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -280,9 +280,9 @@ body{
 
 .loading-container,
 .loading{
-	height: 100px;
+	height: 250px;
 	position: relative;
-	width: 100px;
+	width: 250px;
 	border-radius: 100%;
 }
 
@@ -292,7 +292,7 @@ body{
 
 .loading{
 	border: 1px solid transparent;
-	border-color: transparent var(--white-color) transparent var(--white-color);
+	border-color: transparent var(--accent-color) transparent var(--accent-color);
 	animation: rotate-loading 1.5s linear 0s infinite normal;
 	transform-origin: 50% 50%;
 }
@@ -306,8 +306,11 @@ body{
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	max-width: 150px;
+	max-width: 300px;
 	transform: translate(-50%, -50%);
+}
+#loading-icon img{
+	max-width: 300px;
 }
 
 @keyframes rotate-loading{
