@@ -36,6 +36,8 @@
 	<link rel="stylesheet" href="css/magnific-popup.css">
 	<!-- Main Custom Css -->
 	<link href="css/custom.css" rel="stylesheet" media="screen">
+	
+
 
 	
 </head>
@@ -227,48 +229,104 @@
 
                 <div class="col-lg-6">
                     <div class="contact-form-box wow fadeInUp" data-wow-delay="0.5s">
-						<!-- Contact Form Start -->
 						<div class="contact-form">
 							<form id="contactForm" action="#" method="POST" data-toggle="validator">
-								<div class="row">
-									<div class="form-group col-md-6 mb-4">
-										<input type="text" name="fname" class="form-control" id="fname" placeholder="first name" required >
-										<div class="help-block with-errors"></div>
-									</div>
-
-									<div class="form-group col-md-6 mb-4">
-										<input type="text" name="lname" class="form-control" id="lname" placeholder="last name" required >
-										<div class="help-block with-errors"></div>
-									</div>
-
-									<div class="form-group col-md-6 mb-4">
-										<input type="text" name="phone" class="form-control" id="phone" placeholder="Phone" required >
-										<div class="help-block with-errors"></div>
-									</div>
-
-                                    <div class="form-group col-md-6 mb-4">
-										<input type="email" name ="email" class="form-control" id="email" placeholder="email" required >
-										<div class="help-block with-errors"></div>
-									</div>
-
-									<div class="form-group col-md-12 mb-4">
-										<input type="text" name="subject" class="form-control" id="subject" placeholder="subjects" required >
-										<div class="help-block with-errors"></div>
-									</div>
-
-									<div class="form-group col-md-12 mb-4">
-										<textarea name="msg" class="form-control" id="msg" rows="7" placeholder="message" required></textarea>
-										<div class="help-block with-errors"></div>
-									</div>
-
-									<div class="col-md-12">
-										<button type="submit" class="btn-default">send a message</button>
-										<div id="msgSubmit" class="h3 text-left hidden"></div>
-									</div>
+							  <div class="row">
+								<div class="form-group col-md-6 mb-4">
+								  <input type="text" name="fname" class="form-control" id="fname" placeholder="First Name" required />
+								  <div class="help-block with-errors"></div>
 								</div>
+						  
+								<div class="form-group col-md-6 mb-4">
+								  <input type="text" name="lname" class="form-control" id="lname" placeholder="Last Name" required />
+								  <div class="help-block with-errors"></div>
+								</div>
+						  
+								<div class="form-group col-md-6 mb-4">
+								  <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone" required />
+								  <div class="help-block with-errors"></div>
+								</div>
+						  
+								<div class="form-group col-md-6 mb-4">
+								  <input type="email" name="email" class="form-control" id="email" placeholder="Email" required />
+								  <div class="help-block with-errors"></div>
+								</div>
+						  
+								<div class="form-group col-md-12 mb-4">
+								  <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" required />
+								  <div class="help-block with-errors"></div>
+								</div>
+						  
+								<div class="form-group col-md-12 mb-4">
+								  <textarea name="msg" class="form-control" id="msg" rows="7" placeholder="Message" required></textarea>
+								  <div class="help-block with-errors"></div>
+								</div>
+						  
+								<div class="col-md-12">
+								  <button type="button" id="sendMessageButton" class="btn-default">Send Message</button>
+								</div>
+							  </div>
 							</form>
-						</div>
-						<!-- Contact Form End -->
+						  </div>
+						  <div id="statusMessage"></div>
+						  
+						  <style>
+							.hidden {
+							  display: none;
+							}
+							.text-success {
+							  color: green;
+							  margin-top: 20px;
+							}
+							.text-danger {
+							  color: red;
+							}
+						  </style>
+						  
+						  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+						  <script>
+							document.getElementById("sendMessageButton").addEventListener("click", function () {
+							  // Validate the form fields
+							  const fname = document.getElementById("fname").value.trim();
+							  const lname = document.getElementById("lname").value.trim();
+							  const phone = document.getElementById("phone").value.trim();
+							  const email = document.getElementById("email").value.trim();
+							  const subject = document.getElementById("subject").value.trim();
+							  const message = document.getElementById("msg").value.trim();
+							  const statusMessage = document.getElementById("statusMessage");
+						  
+							  if (!fname || !lname || !phone || !email || !subject || !message) {
+								statusMessage.innerText = "Please fill in all fields before submitting.";
+								statusMessage.className = "text-danger";
+								return;
+							  }
+						  
+							  // Initialize EmailJS
+							  emailjs.init("ZMf_WbTlFswmjLxTe"); // Public Key
+						  
+							  // Form data
+							  const formData = { fname, lname, phone, email, subject, message };
+						  
+							  // Send the email
+							  emailjs.send("service_l29jj6s", "template_6axl1gi", formData).then(
+								function (response) {
+								  console.log("SUCCESS!", response.status, response.text);
+								  statusMessage.innerText = "Thanks for reaching out! We'll contact you shortly";
+								  statusMessage.className = "text-success";
+						  
+								  // Reset the form fields
+								  document.getElementById("contactForm").reset();
+								},
+								function (error) {
+								  console.error("FAILED...", error);
+								  statusMessage.innerText = "Failed to send message. Please try again.";
+								  statusMessage.className = "text-danger";
+								}
+							  );
+							});
+						  </script>
+						  
+						
 					</div>
                 </div>
             </div>
@@ -417,6 +475,8 @@
     <script src="js/wow.js"></script>
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
+	<!-- Email JS -->
+	<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </body>
 
 <!-- Mirrored from demo.awaikenthemes.com/html-preview/weebix/contact-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Nov 2024 17:21:44 GMT -->
