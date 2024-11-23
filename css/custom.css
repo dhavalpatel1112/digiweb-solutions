@@ -3610,3 +3610,42 @@ background: #555; /* Change color on hover */
 scrollbar-width: thin; /* Thin scrollbar for Firefox */
 scrollbar-color: #888 transparent; /* Scrollbar thumb and track colors */
 }
+.contact-section {
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(135deg, #004aad, #004bada8);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .contact-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .contact-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  .contact-section a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #4facfe;
+    background: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .contact-section a:hover {
+    background: #4facfe;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
