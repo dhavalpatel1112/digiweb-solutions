@@ -3746,3 +3746,7 @@ scrollbar-color: #888 transparent; /* Scrollbar thumb and track colors */
   div#j20ecpgvajdg1732376938899 {
     display: none !important;
 }
+.tawk-text-center {
+    text-align: center !important;
+    display: none !important;
+}
