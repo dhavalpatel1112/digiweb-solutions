@@ -35,6 +35,21 @@
 	<link rel="stylesheet" href="css/magnific-popup.css">
 	<!-- Main Custom Css -->
 	<link href="css/custom.css" rel="stylesheet" media="screen">
+	<script>
+		// Disable Right Click
+		document.addEventListener('contextmenu', function(e) {
+		  e.preventDefault();
+		//   alert("Right-click is disabled on this webpage.");
+		});
+	
+		// Disable Ctrl + U
+		document.addEventListener('keydown', function(e) {
+		  if (e.ctrlKey && e.key === 'u') {
+			e.preventDefault();
+			// alert("Viewing source is disabled on this webpage.");
+		  }
+		});
+	  </script>
 	<style>
 		body {
 		  font-family: "Josefin Sans", sans-serif;
