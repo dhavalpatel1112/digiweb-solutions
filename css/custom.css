@@ -3750,3 +3750,7 @@ scrollbar-color: #888 transparent; /* Scrollbar thumb and track colors */
     text-align: center !important;
     display: none !important;
 }
+.tawk-padding-small {
+    padding: .5rem !important;
+    display: none !important;
+}
