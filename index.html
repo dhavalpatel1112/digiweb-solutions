@@ -923,6 +923,22 @@
 
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
+        const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+        mutation.addedNodes.forEach(function(node) {
+            if (
+                node.nodeType === 1 && 
+                node.classList.contains("tawk-flex") &&
+                node.textContent.includes("Add free live chat")
+            ) {
+                node.style.display = "none";
+            }
+        });
+    });
+});
+
+observer.observe(document.body, { childList: true, subtree: true });
+
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
         (function(){
         var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -932,7 +948,18 @@
         s1.setAttribute('crossorigin','*');
         s0.parentNode.insertBefore(s1,s0);
         })();
+
+
+
+
     </script>
+
+    <style>
+        .tawk-flex.tawk-flex-center.tawk-text-center {
+            display: none !important;
+        }
+
+    </style>
     <!--End of Tawk.to Script-->
 </body>
 

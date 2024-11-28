@@ -3754,3 +3754,6 @@ scrollbar-color: #888 transparent; /* Scrollbar thumb and track colors */
     padding: .5rem !important;
     display: none !important;
 }
+.tawk-flex.tawk-flex-center.tawk-text-center {
+    display: none !important;
+}
